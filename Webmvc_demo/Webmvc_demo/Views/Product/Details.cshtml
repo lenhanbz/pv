@@ -1,0 +1,13 @@
+﻿@model Webmvc_demo.Models.Product
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiet san pham</h2>
+
+    <h2>ID: @Html.DisplayFor(model => model.productID)</h2>
+    <h2>Ten:  @Html.DisplayFor(model => model.productName)</h2>
+    <h2>Loai: @Html.DisplayFor(model => model.categoryOfProductID)</h2>
+
+
+

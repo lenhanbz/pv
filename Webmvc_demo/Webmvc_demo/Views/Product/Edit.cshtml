@@ -1,0 +1,12 @@
+﻿@model Webmvc_demo.Models.Product
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Chinh sua</h2>
+<form action="Edit" method="post">
+    <h2>ID: <input name="productID" value="@Model.productID" /> </h2>
+    <h2>Ten: <input name="productName" value="@Model.productName" /> </h2>
+    <h2>Loai: <input name="categoryOfProductID" value="@Model.categoryOfProductID" /> </h2>
+    <input type="submit" value="Save"/>
+</form>

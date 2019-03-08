@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Webmvc_demo.Models.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>San pham</h2>
+@Html.ActionLink("Tao moi", "Create")
+<table cellpadding="20">
+    <tr style="color:aqua">
+        <td>Ma san pham</td>
+        <td>Ten san pham</td>
+        <td>Loai</td>
+    </tr>
+    @foreach (var i in Model)
+    {
+    <tr>
+        <td><a href="/Product/Details/@i.productID">@i.productID</a></td>
+        <td>@i.productName</td>
+        <td>@i.categoryOfProductID</td>
+        <td><a href="/Product/Edit/@i.productID">Chinh sua</a></td>
+        <td><a href="/Product/Delete/@i.productID">Xoa</a></td>
+    </tr>
+    }
+</table>

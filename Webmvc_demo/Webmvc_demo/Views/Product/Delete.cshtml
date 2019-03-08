@@ -1,0 +1,11 @@
+﻿@model Webmvc_demo.Models.Product
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Xoa san pham</h2>
+
+    <h2>ID: <input name="productID" value="@Model.productID" /> </h2>
+    <h2>Ten: <input name="productName" value="@Model.productName" /> </h2>
+    <h2>Loai: <input name="categoryOfProductID" value="@Model.categoryOfProductID" /> </h2>
+   <a href="/Product/DeleteConfirm/@Model.productID">Delete</a>

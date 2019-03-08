@@ -44,8 +44,12 @@ namespace Webmvc_demo.Controllers
         [HttpPost]
         public ActionResult Edit(Product pro)
         {
-            db.Entry(pro).State = EntityState.Modified;
-            db.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                db.Entry(pro).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
             return RedirectToAction("Index");
         }
         [HttpGet]
@@ -57,8 +61,12 @@ namespace Webmvc_demo.Controllers
         public ActionResult DeleteConfirm(int? id)
         {
             Product pro = db.Products.Find(id);
-            db.Products.Remove(pro);
-            db.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                db.Products.Remove(pro);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
             return RedirectToAction("Index");
         }
     }

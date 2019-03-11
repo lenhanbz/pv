@@ -25,10 +25,34 @@ namespace Webmvc_demo.Controllers
         {
             if (ModelState.IsValid)
             {
+                var x1 = Request["productName"];
+                var x2 = Request.QueryString["productName"];
+                var x3 = Request.Form["productName"];
+                var x4 = Request.Params["productName"];
                 db.Products.Add(pro);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            return View();
+        }
+        public ActionResult Create2()
+        {
+            return View();
+        }
+        [HttpPost]
+        //[ActionName("Create3")]
+        public ActionResult Create2(FormCollection fields)
+        {
+            if (ModelState.IsValid)
+            {
+                var x1 = fields["productID"];
+                var x2 = fields["productName"];
+
+                var x3 = Request.Form["productID"];
+                var x4 = Request.Form["productName"];
+                return RedirectToAction("Index");
+            }
+            
             return View();
         }
         public ActionResult Details(int? id)
